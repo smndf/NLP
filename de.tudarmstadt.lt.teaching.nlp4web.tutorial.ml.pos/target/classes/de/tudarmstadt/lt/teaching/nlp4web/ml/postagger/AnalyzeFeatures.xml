@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+    <primitive>true</primitive>
+    <annotatorImplementationName>de.tudarmstadt.lt.teaching.nlp4web.ml.postagger.AnalyzeFeatures</annotatorImplementationName>
+    <analysisEngineMetaData>
+        <name>de.tudarmstadt.lt.teaching.nlp4web.ml.postagger.AnalyzeFeatures</name>
+        <description>This class analaysis the classification result and prints the precision and
+recall for each pos tag and prints the average precision and recall for all
+pos tags and the accuracy</description>
+        <version>0.0.1-SNAPSHOT</version>
+        <vendor>DKPro Core Project</vendor>
+        <copyright>Copyright 2010
+							Ubiquitous Knowledge Processing	(UKP) Lab
+							Technische Universität Darmstadt</copyright>
+        <configurationParameters>
+            <configurationParameter>
+                <name>TokenValuePath</name>
+                <description>To make this class general, the path to the feature that is used
+for the evaluation the tokenValuePath has to be set to the feature
+e.g. for the pos value: pos/PosValue is used
+(works only for token: de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token)</description>
+                <type>String</type>
+                <multiValued>false</multiValued>
+                <mandatory>true</mandatory>
+            </configurationParameter>
+            <configurationParameter>
+                <name>InputFile</name>
+                <description/>
+                <type>String</type>
+                <multiValued>false</multiValued>
+                <mandatory>true</mandatory>
+            </configurationParameter>
+        </configurationParameters>
+        <configurationParameterSettings/>
+        <typeSystemDescription/>
+        <typePriorities/>
+        <fsIndexCollection/>
+        <capabilities/>
+        <operationalProperties>
+            <modifiesCas>true</modifiesCas>
+            <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+            <outputsNewCASes>false</outputsNewCASes>
+        </operationalProperties>
+    </analysisEngineMetaData>
+</analysisEngineDescription>

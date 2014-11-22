@@ -1,0 +1,3 @@
+classpath*:de/tudarmstadt/lt/teaching/nlp4web/ml/postagger/AnalyzeFeatures.xml
+classpath*:de/tudarmstadt/lt/teaching/nlp4web/ml/postagger/PosTaggerAnnotator.xml
+classpath*:de/tudarmstadt/lt/teaching/nlp4web/ml/reader/ConllAnnotator.xml

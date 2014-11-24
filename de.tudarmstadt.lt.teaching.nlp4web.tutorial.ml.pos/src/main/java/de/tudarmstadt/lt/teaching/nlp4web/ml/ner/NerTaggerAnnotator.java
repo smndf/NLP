@@ -101,7 +101,9 @@ public class NerTaggerAnnotator
     public void process(JCas jCas)
         throws AnalysisEngineProcessException
     {
-        for (Sentence sentence : select(jCas, Sentence.class)) {
+		System.out.println("début nertag annotator");
+        int ii = 0;
+		for (Sentence sentence : select(jCas, Sentence.class)) {
             List<Instance<String>> instances = new ArrayList<Instance<String>>();
             List<Token> tokens = selectCovered(jCas, Token.class, sentence);
             List<NamedEntity> nes = selectCovered(jCas, NamedEntity.class, sentence);
@@ -122,6 +124,7 @@ public class NerTaggerAnnotator
                 // add the instance to the list !!!
                 instances.add(instance);
             }
+    		System.out.println(ii++);
             // differentiate between training and classifying
             if (this.isTraining()) {
                 this.dataWriter.write(instances);
@@ -131,11 +134,13 @@ public class NerTaggerAnnotator
                 int i = 0;
                 for (Token token : tokens) {
                     NamedEntity ne = new NamedEntity(jCas, token.getBegin(), token.getEnd());
+                    
                     //pos.setPosValue(posTags.get(i++));
                     //token.setPos(pos);
                 }
             }
         }
+		System.out.println("fin nertag annotator");
 
     }
 

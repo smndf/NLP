@@ -2,9 +2,9 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
     <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
     <primitive>true</primitive>
-    <annotatorImplementationName>de.tudarmstadt.lt.teaching.nlp4web.ml.postagger.PosTaggerAnnotator</annotatorImplementationName>
+    <annotatorImplementationName>de.tudarmstadt.lt.teaching.nlp4web.ml.ner.NerTaggerAnnotator</annotatorImplementationName>
     <analysisEngineMetaData>
-        <name>de.tudarmstadt.lt.teaching.nlp4web.ml.postagger.PosTaggerAnnotator</name>
+        <name>de.tudarmstadt.lt.teaching.nlp4web.ml.ner.NerTaggerAnnotator</name>
         <version>0.0.1-SNAPSHOT</version>
         <vendor>DKPro Core Project</vendor>
         <copyright>Copyright 2010

@@ -2,10 +2,10 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
     <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
     <primitive>true</primitive>
-    <annotatorImplementationName>de.tudarmstadt.lt.teaching.nlp4web.ml.postagger.AnalyzeFeatures</annotatorImplementationName>
+    <annotatorImplementationName>de.tudarmstadt.lt.teaching.nlp4web.ml.ner.AnalyzeFeaturesNer</annotatorImplementationName>
     <analysisEngineMetaData>
-        <name>de.tudarmstadt.lt.teaching.nlp4web.ml.postagger.AnalyzeFeatures</name>
-        <description>This class analyzes the classification result and prints the precision and&#13;
+        <name>de.tudarmstadt.lt.teaching.nlp4web.ml.ner.AnalyzeFeaturesNer</name>
+        <description>This class analaysis the classification result and prints the precision and&#13;
 recall for each pos tag and prints the average precision and recall for all&#13;
 pos tags and the accuracy</description>
         <version>0.0.1-SNAPSHOT</version>

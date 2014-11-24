@@ -5,7 +5,7 @@
     <annotatorImplementationName>de.tudarmstadt.lt.teaching.nlp4web.ml.postagger.AnalyzeFeatures</annotatorImplementationName>
     <analysisEngineMetaData>
         <name>de.tudarmstadt.lt.teaching.nlp4web.ml.postagger.AnalyzeFeatures</name>
-        <description>This class analaysis the classification result and prints the precision and
+        <description>This class analyzes the classification result and prints the precision and
 recall for each pos tag and prints the average precision and recall for all
 pos tags and the accuracy</description>
         <version>0.0.1-SNAPSHOT</version>

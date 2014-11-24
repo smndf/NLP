@@ -1636,6 +1636,7 @@ Intelligence NNP I-NP I-ORG
 Service NNP I-NP I-ORG
 -- : O O
 
+
 LATTAKIA NNP I-NP I-LOC
 , , O O
 Aug NNP I-NP O

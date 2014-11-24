@@ -49,17 +49,17 @@ public class ExecuteNerTagger {
 
 	}
 
-	public static void classifyTestFile(String modelDirectory, File testPosFile, String language) throws ResourceInitializationException, UIMAException, IOException {
+	public static void classifyTestFile(String modelDirectory, File testNerFile, String language) throws ResourceInitializationException, UIMAException, IOException {
 		runPipeline(FilesCollectionReader.getCollectionReaderWithSuffixes(
-				testPosFile.getAbsolutePath(),
-				ConllAnnotator.CONLL_VIEW, testPosFile.getName()),
+				testNerFile.getAbsolutePath(),
+				ConllAnnotator.CONLL_VIEW, testNerFile.getName()),
 				createEngine(ConllAnnotator.class),
 				createEngine(SnowballStemmer.class,
 						SnowballStemmer.PARAM_LANGUAGE, language),
 						createEngine(NerTaggerAnnotator.class,
 				GenericJarClassifierFactory.PARAM_CLASSIFIER_JAR_PATH, 	modelDirectory+"model.jar"),
 				createEngine(AnalyzeFeaturesNer.class,
-						AnalyzeFeaturesNer.PARAM_INPUT_FILE, testPosFile.getAbsolutePath(),
+						AnalyzeFeaturesNer.PARAM_INPUT_FILE, testNerFile.getAbsolutePath(),
 						AnalyzeFeaturesNer.PARAM_TOKEN_VALUE_PATH,"pos/PosValue")
 			);
 	}
@@ -69,12 +69,17 @@ public class ExecuteNerTagger {
 		long start = System.currentTimeMillis();
 		String modelDirectory = "src/test/resources/model/";
 		String language = "en";
-		File posTagFile=   new File("src/main/resources/ner/ner_eng.train");
-		File testPosFile = new File("src/main/resources/ner/ner_eng.dev");
+		//File nerTagFile=   new File("src/main/resources/ner/ner_eng.train");
+		File nerTagFile=   new File("src/main/resources/ner/testNer");
+		File testNerFile = new File("src/main/resources/ner/ner_eng.dev");
 		new File(modelDirectory).mkdirs();
-		writeModel(posTagFile, modelDirectory,language);
+		System.out.println("écriture modèle");
+		writeModel(nerTagFile, modelDirectory,language);
+		System.out.println("training");
 		trainModel(modelDirectory);
-		classifyTestFile(modelDirectory, testPosFile,language);
+		System.out.println("classification");
+		classifyTestFile(modelDirectory, testNerFile,language);
+		System.out.println("fin");
 		long now = System.currentTimeMillis();
 		UIMAFramework.getLogger().log(Level.INFO,"Time: "+(now-start)+"ms");
 	}

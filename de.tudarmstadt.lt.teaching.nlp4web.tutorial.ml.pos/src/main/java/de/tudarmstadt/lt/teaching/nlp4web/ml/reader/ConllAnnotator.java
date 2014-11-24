@@ -29,6 +29,7 @@ public class ConllAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
+		System.out.println("début annotator");
 		JCas docView;
 		String tbText;
 		try {
@@ -99,7 +100,7 @@ public class ConllAnnotator extends JCasAnnotator_ImplBase {
 				//set POS value and add POS to the token and to the index
 				posTag.setPosValue(pos);
 				neTag.setValue(ne);
-				System.out.println("mot : " + word + ", POS : " + pos + ", NER : " + ne );
+				//System.out.println("mot : " + word + ", POS : " + pos + ", NER : " + ne );
 				neTag.addToIndexes();
 				token.setPos(posTag);
 				token.addToIndexes();
@@ -117,6 +118,7 @@ public class ConllAnnotator extends JCasAnnotator_ImplBase {
 		}
 
 		docView.setSofaDataString(docText.toString(), "text/plain");
+		System.out.println("fin conllannotator");
 	}
 
 	private void terminateSentence(Sentence sentence, Token token,StringBuffer docText){
